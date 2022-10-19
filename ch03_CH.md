@@ -269,7 +269,7 @@ input.cpp 中的 execute_command() 方法负责解析输入脚本每一行的第
 
 - LAMMPS 开发人员指南 - 时间步长如何工作：https://lammps.sandia.gov/doc/Developer_flow.html
 
-- LAMMPS 开发人员指南 – LAMMPS 类：https: //lammps.sandia.gov/doc/Classes_lammps.html 
+- LAMMPS 开发人员指南 – LAMMPS 类：https://lammps.sandia.gov/doc/Classes_lammps.html 
 
 # 问题
 
