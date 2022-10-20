@@ -29,7 +29,7 @@
 `atom.cpp` 和 `atom.h` 中表示的 Atom 类提供了对各种原子属性的访问，包括原子类型、分子 ID、位置、速度和力。这些数量列在 atom.h 头文件中，如下所示：
 
 <div align=center>
-<img src=fig4_1.png>
+<img src=./ch04/fig4_1.jpg>
 </div>
 
 图 4.1 – atom.h 的代码片段
@@ -114,7 +114,7 @@ atom 的 ID 可以用局部索引或全局索引来描述，在编写代码时�
 在pair样式的情况下，近邻表在`pair.h`中创建，并由子pair classes继承；描述如下：
 
 <div align=center>
-<img src=fig4_2.png>
+<img src=./ch04/fig4_2.jpg>
 </div>
 
 图 4.2 – pair.h 中的代码片段
@@ -122,7 +122,7 @@ atom 的 ID 可以用局部索引或全局索引来描述，在编写代码时�
 `Pair:init_style()` 方法请求近邻表，如*第 3 章源代码结构和执行阶段*中的*图 3.6 所示。可以根据需要请求完整或一半的近邻表。在修复的情况下，“fix.h”父类不请求近邻表，因此个别子修复类需要在需要时请求它。在下面的屏幕截图中，我们展示了在 `fix_orient_fcc.cpp`（位于 `src/MISC` 文件夹中）中实现的近邻表请求：
 
 <div align=center>
-<img src=fig4_3.png>
+<img src=./ch04/fig4_3.jpg>
 </div>
 
 图 4.3 – 来自 fix_orient_fcc.cpp 的代码片段显示了 init() 和 init_list() 方法
@@ -142,7 +142,7 @@ atom 的 ID 可以用局部索引或全局索引来描述，在编写代码时�
 下图说明了上述近邻表的架构及其数量：
 
 <div align=center>
-<img src=fig4_4.png>
+<img src=./ch04/fig4_4.jpg>
 </div>
 
 图 4.4 – 显示 inum、ilist、numneigh 和 firstneigh 数量的近邻表架构
@@ -156,7 +156,7 @@ atom 的 ID 可以用局部索引或全局索引来描述，在编写代码时�
 以下代码行说明了此过程：
 
 <div align=center>
-<img src=fig4_5.png>
+<img src=./ch04/fig4_5.jpg>
 </div>
 
 图 4.5 – 使用注释访问近邻表（左）的典型代码（右）
@@ -172,7 +172,7 @@ atom 的 ID 可以用局部索引或全局索引来描述，在编写代码时�
 LAMMPS 中使用的不同单位的物理常数（例如，SI、“real”和“metal”）可以使用 `force.h` 中的箭头运算符获得。以下屏幕截图显示了这些常量的列表：
 
 <div align=center>
-<img src=fig4_6.png>
+<img src=./ch04/fig4_6.jpg>
 </div>
 
 图 4.6 – force.h 的屏幕截图，显示了用于实现物理常数的变量
@@ -180,7 +180,7 @@ LAMMPS 中使用的不同单位的物理常数（例如，SI、“real”和“m
 正如您在前面的屏幕截图中看到的，“force.h”仅包含代表各种物理常数的变量名称。这些常量的数值在 `update.cpp` 中提供，它导入 `force.h` 并在 `Update::set_units()` 方法中为这些变量赋值，如以下屏幕截图所示：
 
 <div align=center>
-<img src=fig4_7.png>
+<img src=./ch04/fig4_7.jpg>
 </div>
 
 图 4.7 – update.cpp 中的代码片段，将数值分配给表示物理常数的变量
@@ -210,7 +210,7 @@ doubleboltz = force->boltz；
 - 这是 `Force::numeric()` 方法的屏幕截图，该方法从输入脚本中读取浮点数：
 
 <div align=center>
-<img src=fig4_8.png>
+<img src=./ch04/fig4_8.jpg>
 </div>
 
 图 4.8 – force.cpp 中显示 numeric() 方法的代码片段
@@ -220,7 +220,7 @@ doubleboltz = force->boltz；
 - 同样，`Force::inumeric()` 方法从手动输入的文本中读取整数：
 
 <div align=center>
-<img src=fig4_9.png>
+<img src=./ch04/fig4_9.jpg>
 </div>
 
 图 4.9 – force.cpp 中显示 inumeric() 方法的代码片段
@@ -230,7 +230,7 @@ doubleboltz = force->boltz；
 - 其他方法包括 `Force::bnumeric()` 和 `Force::tnumeric()`，它们分别读取大整数（例如系统中的原子数）和标记整数（例如原子和分子 ID） ; 这在 `lmptype.h` 中有更详细的描述。当读取必须限制为介于 1 和指定原子类型数之间的整数的原子类型时，可以使用 `Force::bounds()` 方法来验证输入字符串：
 
 <div align=center>
-<img src=fig4_10.png>
+<img src=./ch04/fig4_10.jpg>
 </div>
 
 图 4.10 – force.cpp 中显示 bounds() 方法的代码片段
@@ -243,7 +243,7 @@ doubleboltz = force->boltz；
 - `pair_morse.cpp` 的以下摘录显示了用于从输入脚本中读取有关 `pair style Morse` 参数的一些上述方法（当我们分析配对样式时，将更详细地描述 Morse 对样式及其参数在*第 5 章，了解配对样式*）：
 
 <div align=center>
-<img src=fig4_11.png>
+<img src=./ch04/fig4_11.jpg>
 </div>
 
 图 4.11 – 来自 pair_morse.cpp 的代码片段，显示了由 force.cpp 中的方法解析的输入参数
@@ -269,7 +269,7 @@ doubleboltz = force->boltz；
 当标准 C++ 存储库中不存在某种数据类型时，可以通过在 `lmptype.h` 中适当地定义它来创建并合并到 LAMMPS 源代码中。例如，前面在 `tagint bond_atom = atom->bond_atom` 中描述的 `tagint` 数据类型是 int 数据类型的变体。此 tagint 数据类型已在 `lmptype.h` 中定义，如以下屏幕截图所示：
 
 <div align=center>
-<img src=fig4_12.png>
+<img src=./ch04/fig4_12.jpg>
 </div>
 
 图 4.12 – lmptype.h 中显示 tagint 和 bigint 数据类型声明的代码片段
@@ -286,7 +286,7 @@ doubleboltz = force->boltz；
 下表列出了编译期间选择的 `LAMMPS_BIGBIG`、`LAMMPS_SMALLBIG` 和 `LAMMPS_SMALLSMALL` 定义所容纳的范围（*第 109*、*77* 和 *140*​​ 行）：
 
 <div align=center>
-<img src=table4_1.png>
+<img src=./ch04/table4_1.jpg>
 </div>
 
 表 4.1 – lmptype.h 中可用定义所包含的原子数范围列表、时间步数、原子 ID 和图像标志值

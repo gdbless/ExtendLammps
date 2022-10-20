@@ -44,7 +44,7 @@ $$F_x=-\frac{dV}{dr}\cdot\frac{\Delta{z}}{r}$$
 下图说明了这个概念，使用两个粒子通过 $V(x)=4\epsilon[(\frac{\sigma}{x})^{12}-( \frac{\sigma}{x})^6]$，其中 $\epsilon$ 代表井深，$\sigma$ 代表势为零的位置：
 
 <div align=center>
-<img src='fig1_1.png'>
+<img src='./ch01/fig1_1.jpg'>
 </div>
 
 图 1.1 - 两个一维粒子通过 Lennard-Jones 势相互作用 $V(x)=4\epsilon[(\frac{\sigma}{x})^{12}-(\frac{\sigma}{x} )^6]$
@@ -83,7 +83,7 @@ $$v_z(t+\Delta t)=v_z(t) + \frac{1}{2}[\frac{F_{net,z^(t)}}{m}+\frac{F_{net,z ^(
 实际上，每个粒子的位置和速度在每次迭代时都被制成表格，如下表所示：
 
 <div align=center>
-<img src='table1_1.png'>
+<img src='./ch01/table1_1.jpg'>
 </div>
 
 表 1.1 - 显示每个粒子的位置和速度向量的迭代更新顺序的表
@@ -115,7 +115,7 @@ $$I\overrightarrow{\omega}(t+\Delta t)=\overrightarrow{L}(t+\Delta t)$$
 在恒定温度 T 下处于热平衡的系统的特征在于它的 **Maxwell-Boltzmann 速度分布**。根据这个分布，给定质量为 m 的粒子系统在单个方向 $i$（可以是 $x$,$y$,$z$）上的速度概率分布 $f(v_i)$由**高斯函数**，如图 1.2 所示：
 
 <div align=center>
-<img src='fig1_2.png'>
+<img src='./ch01/fig1_2.jpg'>
 </div>
 
 图 1.2 – Maxwell-Boltzmann 速度分布（左）和速度分布（右）
@@ -150,7 +150,7 @@ $$f(v)=\sqrt{\frac{2}{\pi}}(\frac{m}{k_BT})^{\frac{3}{2}}v^2\exp[-\frac {mv^2}{2
 模拟系统通常由代表较大系统的小单元组成——例如，金属晶格的纳米晶体表示。在这样的系统中，通常可以假设整个系统由模拟框的许多复制组成。1912 年，Born 和 von Karman 提出了**周期性边界条件**的实现，它可以从模拟盒开始模拟连续复制的系统。假设模拟盒的每个壁（即边界）与在相同位置包含相同原子的相同模拟盒相邻。实际上，盒子的每一面墙都通向模拟盒子的复制品，其中包含与模拟盒子中相同原子的图像。在每次迭代中，随着模拟框中的原子位置更新，副本中的图像原子相应地更新。下图显示了这个模拟框：
 
 <div align=center>
-<img src='fig1_3.png'>
+<img src='./ch01/fig1_3.jpg'>
 </div>
 
 图 1.3 – 没有（顶部）和（底部）周期性边界的 2D 模拟框
@@ -183,7 +183,7 @@ $$f(v)=\sqrt{\frac{2}{\pi}}(\frac{m}{k_BT})^{\frac{3}{2}}v^2\exp[-\frac {mv^2}{2
 这样，近邻列表通过重用来自先前迭代的信息来排除位于足够远的原子，因此这减少了计算近邻距离的计算时间。该过程如下图所示：
 
 <div align=center>
-<img src='fig1_4.png'>
+<img src='./ch01/fig1_4.jpg'>
 </div>
 
 图 1.4 – 中心原子径向 $r_{cutoff}$ 距离和趋肤宽度 $r_s$ 的图示（黑点）
@@ -202,7 +202,7 @@ $$f(v)=\sqrt{\frac{2}{\pi}}(\frac{m}{k_BT})^{\frac{3}{2}}v^2\exp[-\frac {mv^2}{2
 在 MD 的上下文中，解决任务分配问题的一种策略是**空间分解**，它将模拟框分成相等的部分，并将位于每个部分的原子分配给不同的核心，如下所示：
 
 <div align=center>
-<img src='fig1_5.png'>
+<img src='./ch01/fig1_5.jpg'>
 </div>
 
 图 1.5 –（左）计算模拟框中每个原子轨迹的单个处理核心。（右）模拟框被划分为域，每个域中的原子被分配到不同的核心
@@ -212,7 +212,7 @@ $$f(v)=\sqrt{\frac{2}{\pi}}(\frac{m}{k_BT})^{\frac{3}{2}}v^2\exp[-\frac {mv^2}{2
 为了解释位于不同核上的原子之间的相互作用，每个核使用一个壳构建其域，该壳容纳位于域边缘的粒子，并与其他核交换粒子的副本（称为幽灵原子），如下图所示图表：
 
 <div align=center>
-<img src='fig1_6.png'>
+<img src='./ch01/fig1_6.jpg'>
 </div>
 
 图 1.6 - 显示其壳（虚线框）的核心域和与相邻域共享的虚原子

@@ -33,7 +33,7 @@ LAMMPS 提供内置功能来使用自己的脚本语法构建 MD 模拟。LAMMPS
 示例输入脚本可能如下所示：
 
 <div 对齐=居中>
-<img src=fig2_1.png>
+<img src=./ch02/fig2_1.jpg>
 </div>
 
 图 2.1 – LAMMPS 的示例输入脚本
@@ -46,7 +46,7 @@ LAMMPS 提供内置功能来使用自己的脚本语法构建 MD 模拟。LAMMPS
 LAMMPS下载解压后（说明请访问https://lammps.sandia.gov/doc/Install_tarball.html），可以从src文件夹中访问源代码，如下图：
 
 <div 对齐=居中>
-<img src=fig2_2.png>
+<img src=./ch02/fig2_2.jpg>
 </div>
 
 图 2.2 – src 文件夹的屏幕截图，显示成对的 .cpp 和 .h 源文件，以及分成文件夹的包列表
@@ -61,7 +61,7 @@ LAMMPS下载解压后（说明请访问https://lammps.sandia.gov/doc/Install_tar
 源代码层次结构中的最顶层类是 lammps.cpp（和 lammps.h），它通过容纳 LAMMPS 的实例来启动 LAMMPS。这样做时，lammps.cpp 分配可在整个代码中访问的基本类，如以下屏幕截图所示：
 
 <div 对齐=居中>
-<img src=fig2_3.png>
+<img src=./ch02/fig2_3.jpg>
 </div>
 
 图 2.3 – 来自 lammps.cpp 的代码片段
@@ -69,7 +69,7 @@ LAMMPS下载解压后（说明请访问https://lammps.sandia.gov/doc/Install_tar
 此实例化由 main.cpp 文件调用，该文件还将输入脚本传送到此 LAMMPS 实例以供后续执行，如以下屏幕截图所示：
 
 <div 对齐=居中>
-<img src=fig2_4.png>
+<img src=./ch02/fig2_4.jpg>
 </div>
 
 图 2.4 – main.cpp 中的代码片段

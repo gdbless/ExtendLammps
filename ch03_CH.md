@@ -30,7 +30,7 @@
 这些是 LAMMPS 中使用的所有修复程序的父类。除其他目的外，他们读取所有修复共有的前三个参数（修复 ID、组 ID 和修复样式）并设置能量或维里计算。以下屏幕截图显示了来自 `fix.cpp` 的代码片段，它调用 LAMMPS 实例并读取三个常用参数：
 
 <div align=center> 
-<img src=fig3_1.png> 
+<img src=./ch03/fig3_1.jpg> 
 </div>
 
 图 3.1 - 来自的代码片段fix.cpp
@@ -38,7 +38,7 @@
 所有修复程序都从 `fix.cpp` 继承这三个参数，以及设置计算的方法。从 `fix.cpp` 父类继承的典型修复子类包含以下行（从 `fix_addforce.cpp` 中提取）：
 
 <div align=center> 
-<img src=fig3_2.png> 
+<img src=./ch03/fig3_2.jpg> 
 </div>
 
 图 3.2 – 从 fix.cpp 继承的 fixaddforce.cpp
@@ -46,7 +46,7 @@
 这个子修复类从其父类继承三个参数，然后读取特定于自身的参数。同样，`fix.h` 存储了所有修复子类共享的变量列表，如下所示：
 
 <div align=center> 
-<img src=fig3_3.png> 
+<img src=./ch03/fig3_3.jpg> 
 </div>图 3.3 - fix.h 
 Child
 
@@ -81,7 +81,7 @@ fix F1 all nvt temp 100 100 0.1
 这些父类通过验证是否已指定所有对系数、在需要时应用混合规则、确定截止值、请求邻居列表和设置计算来初始化所有对样式。以下屏幕截图显示了 pair.cpp 中执行这些任务的一些代码段。首先，让我们看看配对系数分配：
 
 <div align=center> 
-<img src=fig3_4.png> 
+<img src=./ch03/fig3_4.jpg> 
 </div>
 
 图 3.4 - pair.cpp 中显示配对系数分配代码的代码片段
@@ -89,7 +89,7 @@ fix F1 all nvt temp 100 100 0.1
 接下来，这里是混合系数的屏幕截图: 
 
 <div align=center> 
-<img src=fig3_5.png> 
+<img src=./ch03/fig3_5.jpg> 
 </div>
 
 图 3.5 - 来自 pair.cpp 的代码片段显示了混合系数的代码
@@ -97,7 +97,7 @@ fix F1 all nvt temp 100 100 0.1
 最后，我们将看到请求默认邻居列表的代码：
 
 <div align=center> 
-<img src=fig3_6.png> 
+<img src=./ch03/fig3_6.jpg> 
 </div>
 
 图 3.6 - pair.cpp 中的代码片段显示了请求默认邻居列表的
@@ -119,7 +119,7 @@ fix F1 all nvt temp 100 100 0.1
 当需要使用 `pair_style hybrid` 命令实现多种类型的势时，`pair_hybrid.cpp` 为每个指定的样式创建不同的对样式，并将每个原子对映射到正确的对样式，如下面的屏幕截图所示。首先，我们将查看显示配对样式创建的片段：
 
 <div align=center> 
-<img src=fig3_7.png> 
+<img src=./ch03/fig3_7.jpg> 
 </div>
 
 图 3.7 - pair_hybrid.cpp 中显示配对样式创建的代码片段
@@ -127,7 +127,7 @@ fix F1 all nvt temp 100 100 0.1
 接下来，我们将看到pair样式映射：
 
 <div align=center> 
-<img src=fig3_8.png> 
+<img src=./ch03/fig3_8.jpg> 
 </div>
 
 图 3.8 - pair_hybrid.cpp 中显示对样式映射的代码片段
@@ -138,7 +138,7 @@ fix F1 all nvt temp 100 100 0.1
 所有计算的父类读取前三个参数，类似于修复类，并允许子类读取剩余的参数，如下图所示：
 
 <div align=center > 
-<img src=fig3_9.png> 
+<img src=./ch03/fig3_9.jpg> 
 </div>
 
 图 3.9 - 来自 compute.cpp 的代码片段
@@ -158,7 +158,7 @@ LAMMPS 模拟通过迭代时间步长（例如，**velocity Verlet 积分**）�
 - `init()`：该方法检查输入脚本中是否定义了修复并为数组设置标志，如下所示：
 
 <div align=center> 
-<img src=fig3_10.png> 
+<img src=./ch03/fig3_10.jpg> 
 </div>
 
 图 3.10 – verlet.ccp 中显示 init() 方法的代码片段
@@ -166,7 +166,7 @@ LAMMPS 模拟通过迭代时间步长（例如，**velocity Verlet 积分**）�
 - `force_clear()`：此方法清除所有原子上的力以在时间步长过程中存储合力：
 
 <div align=center> 
-<img src= fig3_11.png> 
+<img src=./ch03/ fig3_11.jpg> 
 </div>
 
 图 3.11 - verlet.ccp 中显示 force_clear() 方法的代码片段
@@ -174,7 +174,7 @@ LAMMPS 模拟通过迭代时间步长（例如，**velocity Verlet 积分**）�
 - `setup()`：该方法使用幽灵原子设置域并构建邻居列表；然后根据需要计算力以在速度 Verlet 算法中执行位置和速度更新：
 
 <div align=center> 
-<img src=fig3_12.png> 
+<img src=./ch03/fig3_12.jpg> 
 </div>
 
 图 3.12 - verlet.ccp 中显示 setup() 方法的代码片段
@@ -182,7 +182,7 @@ LAMMPS 模拟通过迭代时间步长（例如，**velocity Verlet 积分**）�
 时间步长中的其余步骤由 `run()` 方法执行。此方法以预定义的顺序调用其他序列控制方法，这些方法又在同一时间步内的相应点处调用修复。`run()` 方法的以下屏幕截图显示了执行顺序：
 
 <div align=center> 
-<img src=fig3_13.png> 
+<img src=./ch03/fig3_13.jpg> 
 </div>
 
 图 3.13 - 显示来自 verlet.cpp 的 run() 的代码片段
@@ -190,7 +190,7 @@ LAMMPS 模拟通过迭代时间步长（例如，**velocity Verlet 积分**）�
 这是一个表格，按时间顺序向我们展示了其中一些方法的列表：
 
 <div align=center> 
-<img src=table3_1.png> 
+<img src=./ch03/table3_1.jpg> 
 </div>
 
 表 3.1 - 显示方法列表的表格
@@ -198,7 +198,7 @@ LAMMPS 模拟通过迭代时间步长（例如，**velocity Verlet 积分**）�
 每个修复都被分配了一个序列控制方法来确定其执行顺序，如*第 7 章，了解修复*中所述。`modify.cpp` 类存储所有修复并在时间步的适当点调用这些方法，从而促进以指定顺序执行所有修复。方法列表从 `modify.h` 导入到 `verlet.cpp`。`modify.h` 的屏幕截图按执行顺序显示了这些方法的列表：
 
 <div align=center> 
-<img src=fig3_14.png> 
+<img src=./ch03/fig3_14.jpg> 
 </div>
 
 图 3.14 - 显示 modify.h 中的方法的代码片段
@@ -214,7 +214,7 @@ LAMMPS 模拟通过迭代时间步长（例如，**velocity Verlet 积分**）�
 的作用 指针类的作用 `pointers.h` 文件通过创建指向 lammps.h 中列出的所有重要量的指针来促进类之间的信息传输。所有类都继承自 pointers.h 并且能够访问这些变量。以下屏幕截图说明了创建的指针：
 
 <div align=center>
-<img src=fig3_15.png> 
+<img src=./ch03/fig3_15.jpg> 
 </div>
 
 图 3.15 - 来自 pointers.h 的代码片段显示（左）指向类的指针和（右）指向 lammps.h 中
@@ -232,7 +232,7 @@ input.cpp 中的 execute_command() 方法负责解析输入脚本每一行的第
 以下屏幕截图显示了 `execute_command()` 方法：
 
 <div align=center> 
-<img src=fig3_16.png> 
+<img src=./ch03/fig3_16.jpg> 
 </div>
 
 图 3.16 – input.cpp 中的 execute_command() 方法包含允许的输入脚本命令列表
@@ -240,7 +240,7 @@ input.cpp 中的 execute_command() 方法负责解析输入脚本每一行的第
 如您所见，在前面的屏幕截图中，command 变量表示正在解析的行的第一个单词，并将其与列表进行比较允许的命令。例如，如果匹配 `clear` 这个词（*第 783 行*），则会调用 `input.cpp` 中的 `clear()` 方法，如下图所示：
 
 <div align=center> 
-<img src=fig3_17.png> 
+<img src=./ch03/fig3_17.jpg> 
 </div>
 
 图 3.17 – input.cpp 中的 clear() 方法
@@ -250,7 +250,7 @@ input.cpp 中的 execute_command() 方法负责解析输入脚本每一行的第
 类似地，如果匹配 `lattice` 这个词（*第 824 行*），则调用 `input.cpp` 中的 `lattice()` 方法，如下图所示：
 
 <div align=center> 
-<img src= fig3_18.png> 
+<img src=./ch03/ fig3_18.jpg> 
 </div>
 
 图 3.18 – input.cpp 中的 lattice() 方法
