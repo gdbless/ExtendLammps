@@ -142,7 +142,7 @@ MPI 可在 *附录 C，熟悉 MPI* 中找到。相关头文件
 两组原子之间的相互作用能和力可以使用`compute group/group`获得，并由`compute_group_group`实现。cpp` 和 `compute_group_group.h` 类。实现此计算的 LAMMPS 输入脚本命令如下：
 
 ```
-compute COMPUTE_ID G1 组/组 G2
+compute COMPUTE_ID G1 group/group G2 
 ```
 
 `COMPUTE_ID` 参数是compute的唯一 ID，而 `G1` 和 `G2` 参数是计算所作用的原子组的 ID（参见手册：https://lammps.sandia.gov/doc/compute_group_group.html)。手册中列出的可选参数关键字可以在这些参数之后输入，以指定其他选项，例如相互作用类型（*对电位或静电*）和分子 ID（相同或不同）。构造函数方法容纳了这些可选参数，我们将在以下部分中看到。
@@ -525,7 +525,7 @@ compute COMPUTE_ID GROUP heat/flux KE PE STRESS
 一旦计算了对流部分和维里部分，维里部分`jv[]`通过适当的压力单位缩放转换为与对流部分`jc[]`相同的单位（*第188行*至 *191*)。最后，使用元素创建 `data[]` 数组（*第 197 行*），如以下代码所示：
 
 ```
- 双数据[6] =
+ double data[6] = 
 {jc[0]+jv[0],jc[1]+jv[1],jc[2]+jv[2],jc[0],jc[1],jc[2]};
 ```
 
