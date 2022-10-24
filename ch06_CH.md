@@ -24,8 +24,7 @@
 
 你可以在这里找到本章使用的完整源代码：https://github.com/PacktPublishing/Extending-and-Modifying-LAMMPS-Writing-Your-Own-Source-Code
 
-这是下载 LAMMPS 的链接：https://lammps.sandia.gov/doc/Install.html。LAMMPS GitHub 链接是 https://github.com/lammps/
-lampps，也可以在其中找到源代码。
+这是下载 LAMMPS 的链接：https://lammps.sandia.gov/doc/Install.html。LAMMPS GitHub 链接是 https://github.com/lammps/lammps ，也可以在其中找到源代码。
 
 ## 查看计算的一般结构
 在本节中，我们将简要介绍计算子类中最常用的一些方法。
@@ -552,7 +551,7 @@ compute COMPUTE_ID GROUP heat/flux KE PE STRESS
 
 3. `destructor` 方法的主要目的是什么？
 
-4. 在 `compute reduce` 中，`replace` 选项可用于查找数量的索引，以及输入数量的最大值或最小值（参见 https://lammps.sandia.gov/doc/compute_reduce .html）。根据这些信息回答下列问题：
+4. 在 `compute reduce` 中，`replace` 选项可用于查找数量的索引，以及输入数量的最大值或最小值（参见 https://lammps.sandia.gov/doc/compute_reduce.html ）。根据这些信息回答下列问题：
 
 	一个。在 `compute_reduce.cpp` 中，哪些行负责识别所有处理器中具有最大值的数量的索引？
 
