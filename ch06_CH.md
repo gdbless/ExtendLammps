@@ -553,6 +553,6 @@ compute COMPUTE_ID GROUP heat/flux KE PE STRESS
 
 4. 在 `compute reduce` 中，`replace` 选项可用于查找数量的索引，以及输入数量的最大值或最小值（参见 https://lammps.sandia.gov/doc/compute_reduce.html ）。根据这些信息回答下列问题：
 
-	一个。在 `compute_reduce.cpp` 中，哪些行负责识别所有处理器中具有最大值的数量的索引？
+	在 `compute_reduce.cpp` 中，哪些行负责识别所有处理器中具有最大值的数量的索引？
 
-	湾。在 `compute_reduce.cpp` 中，哪些行负责识别所有处理器中具有最小值的数量的索引？
+	在 `compute_reduce.cpp` 中，哪些行负责识别所有处理器中具有最小值的数量的索引？
